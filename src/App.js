@@ -39,9 +39,9 @@ const App = () => {
         const firstVowelIndex = eachWord.indexOf(vowelsArray[0]) // Locating where the first vowel is at (index of)
         const consonantLetters = eachWord.slice(firstVowelIndex) + eachWord.slice(0,firstVowelIndex) + "ay" 
         return consonantLetters
-      }else if (eachWord) {
+      }else if (vowelsArray.length === 0) {
         const indexOfQ = eachWord.indexOf('q') + 2
-        const wordsAreHard = eachWord.slice(indexOfQ) + eachWord.slice(0,indexOfQ)
+        const wordsAreHard = eachWord.slice(indexOfQ) + eachWord.slice(0, indexOfQ)
           return wordsAreHard + 'ay'
       } else if (vowelsArray) {
         const firstVowelIndex = eachWord.indexOf(vowelsArray[0])
