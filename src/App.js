@@ -32,8 +32,34 @@ const App = () => {
       console.log("vowelsArray:", vowelsArray)
 
       // ACTION ITEM: your Pig Latin logic goes here!
-
-      // ACTION ITEM: this return will be the output of your Pig Latin'd code
+      if (vowelsArray.length === 0) {
+        const firstVowelIndex = eachWord.indexOf(vowelsArray[0])
+        const consonantLetters = eachWord.slice(firstVowelIndex) + eachWord.slice(0,firstVowelIndex) + "ay"
+        return consonantLetters
+      } else if (vowelsArray[0] === "a" ||
+      vowelsArray[0] === "e" ||
+      vowelsArray[0] === "i" ||
+      vowelsArray[0] === "o" ||
+      vowelsArray[0] === "u") {
+        const firstVowelIndex = eachWord.indexOf(vowelsArray[0])
+        const pigLatinWord = eachWord.slice(firstVowelIndex) + eachWord.slice(0,firstVowelIndex) + "ay"
+        return pigLatinWord 
+        //------------------------------------
+        // Identify if the word has a vowel for a first letter using -chatAt-
+        // If the word has a vowel as the first letter just add "way" to the end
+      }else if (vowelsArray[0] === "a" ||
+      vowelsArray[0] === "e" ||
+      vowelsArray[0] === "i" ||
+      vowelsArray[0] === "o" ||
+      vowelsArray[0] === "u") {
+        const firstLetterVowel = eachWord.charAt(vowelsArray[0])
+        const pigLatinWord = eachWord.slice(firstLetterVowel) + eachWord.slice(firstLetterVowel) + "way"
+        return pigLatinWord   
+        //--------------------------------------
+    } else {
+        return eachWord + "way"
+      }
+      // // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
     })
 
