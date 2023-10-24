@@ -32,32 +32,31 @@ const App = () => {
       console.log("vowelsArray:", vowelsArray)
 
       // ACTION ITEM: your Pig Latin logic goes here!
-      if (vowelsArray.length === 0) {
-        const firstVowelIndex = eachWord.indexOf(vowelsArray[0])
-        const consonantLetters = eachWord.slice(firstVowelIndex) + eachWord.slice(0,firstVowelIndex) + "ay"
+      if (vowelsArray.includes(eachWord.charAt(0).toLowerCase())) {
+        const firstLetterVowel = eachWord + "way"
+        return firstLetterVowel        
+      }else if (vowelsArray.includes("qu")) {
+        const firstLetterQU = eachWord.indexOf(["qu"])
+        const wordsWithQU = eachWord.slice(firstLetterQU) + eachWord.slice(0,firstLetterQU) + "Kay"
+        return wordsWithQU 
+      }else if (vowelsArray.length === 0) {
+        const firstVowelIndex = eachWord.indexOf(vowelsArray[0]) // Locating where the first vowel is at (index of)
+        const consonantLetters = eachWord.slice(firstVowelIndex) + eachWord.slice(0,firstVowelIndex) + "1ay" 
         return consonantLetters
       } else if (vowelsArray[0] === "a" ||
-      vowelsArray[0] === "e" ||
-      vowelsArray[0] === "i" ||
-      vowelsArray[0] === "o" ||
-      vowelsArray[0] === "u") {
+                vowelsArray[0] === "e" ||
+                vowelsArray[0] === "i" ||
+                vowelsArray[0] === "o" ||
+                vowelsArray[0] === "u") {
         const firstVowelIndex = eachWord.indexOf(vowelsArray[0])
-        const pigLatinWord = eachWord.slice(firstVowelIndex) + eachWord.slice(0,firstVowelIndex) + "ay"
+        const pigLatinWord = eachWord.slice(firstVowelIndex) + eachWord.slice(0,firstVowelIndex) + "2ay"
         return pigLatinWord 
         //------------------------------------
         // Identify if the word has a vowel for a first letter using -chatAt-
         // If the word has a vowel as the first letter just add "way" to the end
-      }else if (vowelsArray[0] === "a" ||
-      vowelsArray[0] === "e" ||
-      vowelsArray[0] === "i" ||
-      vowelsArray[0] === "o" ||
-      vowelsArray[0] === "u") {
-        const firstLetterVowel = eachWord.charAt(vowelsArray[0])
-        const pigLatinWord = eachWord.slice(firstLetterVowel) + eachWord.slice(firstLetterVowel) + "way"
-        return pigLatinWord   
-        //--------------------------------------
-    } else {
-        return eachWord + "way"
+     
+      } else {
+        return eachWord + "2way"
       }
       // // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
