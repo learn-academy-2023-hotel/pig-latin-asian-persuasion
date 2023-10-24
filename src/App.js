@@ -37,21 +37,20 @@ const App = () => {
         return firstLetterVowel        
       }else if (vowelsArray.length === 0) {
         const firstVowelIndex = eachWord.indexOf(vowelsArray[0]) // Locating where the first vowel is at (index of)
-        const consonantLetters = eachWord.slice(firstVowelIndex) + eachWord.slice(0,firstVowelIndex) + "1ay" 
+        const consonantLetters = eachWord.slice(firstVowelIndex) + eachWord.slice(0,firstVowelIndex) + "ay" 
         return consonantLetters
       }else if (eachWord) {
         const indexOfQ = eachWord.indexOf('q') + 2
         const wordsAreHard = eachWord.slice(indexOfQ) + eachWord.slice(0,indexOfQ)
-          return wordsAreHard + 'Qay'
+          return wordsAreHard + 'ay'
       } else if (vowelsArray) {
         const firstVowelIndex = eachWord.indexOf(vowelsArray[0])
-        const pigLatinWord = eachWord.slice(firstVowelIndex) + eachWord.slice(0,firstVowelIndex) + "2ay"
+        const pigLatinWord = eachWord.slice(firstVowelIndex) + eachWord.slice(0,firstVowelIndex) + "ay"
         return pigLatinWord 
         //------------------------------------
         // Identify if the word has a vowel for a first letter using -chatAt-
-        // If the word has a vowel as the first letter just add "way" to the end 
-      } else {
-        return eachWord + "2way"
+        // If the word has a vowel as the first letter just add "way" to the end       } else {
+        return eachWord + "way"
       }
       // // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
